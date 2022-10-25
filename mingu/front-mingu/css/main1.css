@@ -37,6 +37,10 @@ ul, ol {
 }
 
 /* menu */
+header {
+  position: fixed;
+}
+
 .menu {
   float: right;
 }
