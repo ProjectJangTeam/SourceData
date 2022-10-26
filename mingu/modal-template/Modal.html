@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Modal</title>
+    <link rel="stylesheet" href="./css/Modal.css">
+
+  </head>
+  <body>
+    
+
+
+
+
+
+
+    <div class="modal">
+
+      <div class="modal_body">
+
+      <!-- 모달 안쪽 내용 -->
+
+
+      </div>
+
+    </div>
+
+
+
+
+
+
+    <button class="btn-open-popup">Modal 띄우기</button>
+    
+    
+    
+    
+    <div>
+      <div>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet beatae consequuntur culpa delectus, doloremque earum error illum ipsum modi,
+        nulla numquam obcaecati odio placeat reiciendis repellat sapiente sit velit voluptatibus!
+      </div>
+    </div>
+
+
+
+
+
+
+
+    <script>
+      const body = document.querySelector('body');
+      const modal = document.querySelector('.modal');
+      const btnOpenPopup = document.querySelector('.btn-open-popup');
+
+      btnOpenPopup.addEventListener('click', () => {
+        modal.classList.toggle('show');
+
+        if (modal.classList.contains('show')) {
+          body.style.overflow = 'hidden';
+        }
+      });
+
+      modal.addEventListener('click', (event) => {
+        if (event.target === modal) {
+          modal.classList.toggle('show');
+
+          if (!modal.classList.contains('show')) {
+            body.style.overflow = 'auto';
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
