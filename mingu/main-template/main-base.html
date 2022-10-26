@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>가보자GO</title>
+    <meta name="description" content="초기 메인페이지" />
+    <link rel="stylesheet" href="./css/main-base.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <script src="./script/jquery-3.6.0.js"></script>
+    <script src="./script/script.js"></script>
+  </head>
+
+  <body>
+    <!-- Navigation 사실상의 header -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/etc">가보자GO</a>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/etc"
+                >홈
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#">Search</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">코스추천</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#">전시회</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">고객지원</a>
+            </li>
+            <li class="nav-item" th:if="${session.loginMember != null}">
+              <a
+                class="nav-link"
+                href="auth/logout"
+                th:text="${session.loginMember.name}+'(로그아웃)'"
+                >홍길동(로그아웃)</a
+              >
+            </li>
+            <li class="nav-item" th:if="${session.loginMember == null}">
+              <a class="nav-link" href="auth/form">로그인</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link btn-open-popup" href="#">회원가입</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <img src="./images/mypage.png" width="90%" height="25"
+              /></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- 'background_image_config' 전체적으로 설정할 부분이나 배경그림 넣을 때 설정 -->
+    <div class="background_image_config">
+
+
+
+
+
+      <!-- 몸통 작성 내용 부분 -->
+
+
+
+
+
+    </div>
+
+    <!-- Footer-->
+    <footer class="py-4 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy;가보자GO</p>
+      </div>
+    </footer>
+  </body>
+</html>

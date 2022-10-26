@@ -83,6 +83,7 @@ ul, ol {
 .step1 {
   margin-top: 4vh;
   padding-left: 5vw;
+  margin-bottom: 100px;
 }
 
 .step1 > h5 {
@@ -106,15 +107,4 @@ ul, ol {
 .step1 > ul > li > a > img {
   width: 100%;
   height: auto;
-}
-
-/* step2 */
-.step2 {
-  padding-left: 5vw;
-}
-
-.step2 > h5 {
-  color: white;
-  font-size: 1.42vw;
-  margin-bottom: 1vh;
 }
