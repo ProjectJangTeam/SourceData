@@ -1,0 +1,84 @@
+--회원
+
+insert into JANG_MEMBER(ID,
+PWD,
+NNAME,
+NAME,
+EMAIL,
+PNUM,
+BIRTH,
+GENDER,
+MBTI)
+ VALUES
+('user1',
+sha2('1111',256),
+'juser1',
+'JANG',
+'user1@test.com',
+'01000000000',
+'960324',
+'F',
+'ESTJ');
+
+insert into JANG_MEMBER(ID,
+PWD,
+NNAME,
+NAME,
+EMAIL,
+PNUM,
+BIRTH,
+GENDER,
+MBTI)
+ VALUES
+('user2',
+sha2('1111',256),
+'Muser1',
+'MIN',
+'user2@test.com',
+'01100000000',
+'960726',
+'M',
+'ISFJ');
+
+-- 장소1 비트캠프
+insert into JANG_SO(PLNO,
+PLNAME,
+QCALL,
+POSTNO,
+BASICAD,
+DETAILAD,
+WIDO,
+KDO)
+ VALUES(1,
+'BITCAMP',
+'02-1588-7776',
+'06134',
+'Gangnam-gu, Seoul, Republic of Korea',
+'20, Gangnam-daero 94-gil',
+'38.439801',
+'127.127730');
+
+--장소 2 카페
+insert into JANG_SO(PLNO,
+PLNAME,
+QCALL,
+POSTNO,
+BASICAD,
+DETAILAD,
+WIDO,
+KDO)
+ VALUES(2,
+'CAFE',
+'02-2233-3333',
+'06234',
+'Gangnam-gu, Seoul, Republic of Korea',
+'20, Gangnam-daero 15',
+'39.439801',
+'128.127730');
+
+--
+
+
+
+
+
