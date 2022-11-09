@@ -277,7 +277,8 @@ CREATE TABLE jang_notice (
   NTNO  INTEGER      NOT NULL COMMENT '공지사항번호', -- 공지사항번호
   TITLE VARCHAR(255) NOT NULL COMMENT '제목', -- 제목
   CONT  MEDIUMTEXT   NOT NULL COMMENT '내용', -- 내용
-  WDATE DATE         NOT NULL DEFAULT curdate() COMMENT '작성일' -- 작성일
+  WDATE DATE         NOT NULL DEFAULT curdate() COMMENT '작성일', -- 작성일
+  VCNT  INTEGER      NOT NULL DEFAULT 0 COMMENT '조회수' -- 조회수
 )
 COMMENT '공지사항';
 
@@ -517,7 +518,9 @@ CREATE TABLE jang_event (
   EDDATE DATE         NOT NULL COMMENT '종료일', -- 종료일
   PBL    BOOLEAN      NULL     COMMENT '공개여부', -- 공개여부
   EVCODE VARCHAR(255) NOT NULL COMMENT '구분코드', -- 구분코드
-  ECOUNT INTEGER      NOT NULL COMMENT '인원' -- 인원
+  ECOUNT INTEGER      NOT NULL COMMENT '인원', -- 인원
+  WDATE  DATE         NOT NULL COMMENT '작성일', -- 작성일
+  VCNT   INTEGER      NOT NULL DEFAULT 0 COMMENT '조회수' -- 조회수
 )
 COMMENT '이벤트';
 
