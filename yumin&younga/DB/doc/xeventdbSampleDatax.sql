@@ -147,11 +147,11 @@ INSERT INTO eventdb.jang_report (RPNO, RECONO, ID, RSN, RST, RSTDATE) VALUES (4,
 INSERT INTO eventdb.jang_report (RPNO, RECONO, ID, RSN, RST, RSTDATE) VALUES (5, 2, 'user1', '사유1', '처리내용11', '2022-10-11');
 
 -- jang_event
-INSERT INTO eventdb.jang_event (TITLE, CONT, STDATE, EDDATE, PBL, EVCODE, ECOUNT, WDATE, VCNT) VALUES ('이벤트제목1', '이벤트내용1', '2022-01-01', '2022-02-01', 1, '선착순', 10, '2021-12-20', 0);
-INSERT INTO eventdb.jang_event (TITLE, CONT, STDATE, EDDATE, PBL, EVCODE, ECOUNT, WDATE, VCNT) VALUES ('이벤트제목2', '이벤트내용2', '2022-03-01', '2022-04-01', 0, '차등지급', 20, '2022-02-15', 0);
-INSERT INTO eventdb.jang_event (TITLE, CONT, STDATE, EDDATE, PBL, EVCODE, ECOUNT, WDATE, VCNT) VALUES ('이벤트제목3', '이벤트내용3', '2022-05-01', '2022-06-01', 0, '선착순', 30, '2022-04-16', 0);
-INSERT INTO eventdb.jang_event (TITLE, CONT, STDATE, EDDATE, PBL, EVCODE, ECOUNT, WDATE, VCNT) VALUES ('이벤트제목4', '이벤트내용4', '2022-07-01', '2022-08-01', 0, '차등지급', 40, '2022-06-01', 0);
-INSERT INTO eventdb.jang_event (TITLE, CONT, STDATE, EDDATE, PBL, EVCODE, ECOUNT, WDATE, VCNT) VALUES ('이벤트제목5', '이벤트내용5', '2022-09-01', '2022-10-01', 1, '차등지급', 50, '2022-08-11', 0);
+INSERT INTO eventdb.jang_event (TITLE, CONT, STDATE, EDDATE, PBL, EVCODE, ECOUNT, WDATE, VCNT) VALUES ('이벤트제목1', '이벤트내용1', '2022-01-01 00:00:01', '2022-02-01 23:59:59', 1, '선착순', 10, '2021-12-20', 0);
+INSERT INTO eventdb.jang_event (TITLE, CONT, STDATE, EDDATE, PBL, EVCODE, ECOUNT, WDATE, VCNT) VALUES ('이벤트제목2', '이벤트내용2', '2022-03-01 00:00:01', '2022-04-01 23:59:59', 0, '차등지급', 20, '2022-02-15', 0);
+INSERT INTO eventdb.jang_event (TITLE, CONT, STDATE, EDDATE, PBL, EVCODE, ECOUNT, WDATE, VCNT) VALUES ('이벤트제목3', '이벤트내용3', '2022-05-01 00:00:01', '2022-06-01 23:59:59', 0, '선착순', 30, '2022-04-16', 0);
+INSERT INTO eventdb.jang_event (TITLE, CONT, STDATE, EDDATE, PBL, EVCODE, ECOUNT, WDATE, VCNT) VALUES ('이벤트제목4', '이벤트내용4', '2022-07-01 00:00:01', '2022-08-01 23:59:59', 0, '차등지급', 40, '2022-06-01', 0);
+INSERT INTO eventdb.jang_event (TITLE, CONT, STDATE, EDDATE, PBL, EVCODE, ECOUNT, WDATE, VCNT) VALUES ('이벤트제목5', '이벤트내용5', '2022-09-01 00:00:01', '2022-10-01 23:59:59', 1, '차등지급', 50, '2022-08-11', 0);
 
 -- jang_join
 INSERT INTO eventdb.jang_join (EVTNO, ID) VALUES (1, 'user1');
