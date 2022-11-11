@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bitcamp.gabojago.dao.JangSoReviewDao">
+
+    <!-- resultMap -->
+    <resultMap type="jangSoReview" id="jangSoReviewMap">
+        <result column="PRVNO" property="prvno"/>
+        <result column="CONT" property="cont"/>
+        <result column="RECONO" property="recono"/>
+        <result column="PLNAME" property="plname"/>
+        <result column="ADRS" property="adrs"/>
+
+        <collection property="attachedFiles" ofType="jangSoReviewAttachedFile">
+            <id column="recofno" property="recofno"/>
+            <result column="path" property="filepath"/>
+            <result column="fname" property="fname"/>
+        </collection>
+
+    </resultMap>
+
+    <resultMap type="jangSoReviewAttachedFile" id="attachedFileMap">
+        <id column="recofno" property="recofno"/>
+        <result column="prvno" property="prvno"/>
+        <result column="path" property="filepath"/>
+        <result column="fname" property="fname"/>
+    </resultMap>
+    <!-- resultMap 끝 -->
+
+    <!-- recommendationDetail - 2 -->
+    <select id="getJangSoReviewList" resultMap="jangSoReviewMap">
+        select
+            jsr.prvno,
+            jsr.cont,
+            jsr.plname,
+            jsr.adrs,
+            jsrf.recofno,
+            jsrf.path,
+            jsrf.fname
+        from
+            jang_so_review jsr
+            left outer join jang_so_review_file jsrf on jsr.prvno = jsrf.prvno
+        where
+            jsr.recono = #{value}
+    </select>
+
+</mapper>
