@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <title>가보자GO</title>
+  <meta name="description" content="이메일 인증코드 발송 페이지"/>
+</head>
+<body>
+  <h1>입력 양식 테스트 제목입니다.</h1>
+  <select name="구 선택">
+    <option value="강남구">강남구</option>
+    <option value="노원구">노원구</option>
+    <option value="동작구">동작구</option>
+    <option value="마포구">마포구</option>
+    <option value="영등포구">영등포구</option>
+  </select>
+
+  <br>
+  <br>
+
+  <input type="text" placeholder="검색란">
+  <button>검색</button>
+
+  <br>
+  <br>
+
+  <button id="add-form-btn" class="add-form-btn" type="button">추가</button>
+
+  <div id="total-form-div" style="border: solid;">
+    <form id="total-form" action="lastsubmit">
+      <div class="copied-form" name="copied-form" style="border: solid; color: red;">
+        <input type="file" multiple>
+        <input type="text">
+        <button class="remove-btn" type="button" onclick="f1()">제거</button>
+      </div>
+    </form>
+  </div>
+  
+
+
+
+
+  <script>
+    function f1() {
+      var trashbtn = $(this).parent();
+      trashbtn.remove();
+      // obj.removeChild(obj.firstChild);
+      // trash.removeChild(trash.childNodes[1]);
+    };
+  
+    document.getElementById("add-form-btn").onclick = () => {
+    var tot = document.getElementById("total-form");
+    var origin = tot.innerHTML;
+    tot.innerHTML = origin + `      <div class="copied-form" style="border: solid; color: red;">
+        <input type="file" multiple>
+        <input type="text">
+        <button class="remove-btn" type="button" onclick="f1()">제거</button>
+      </div>`;
+    };
+
+  </script>
+
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+
+  <input type="text" class="ga-input-box" list="searchOptions" style="width: 400px;">
+  <datalist id="searchOptions">
+  </datalist>
+  <button id="place-add-btn1" type="button">추가</button>
+
+  <script>
+const place_name_list = [];
+const road_address_name_list = [];
+const phone_list = [];
+const x_list = [];
+const y_list = [];
+
+const addButton = document.querySelector('#place-add-btn1');
+const searchBar = document.querySelector('.ga-input-box');
+const optionElem = document.querySelector('option');
+
+const doSearch = function (e) {
+  const keyword = e.target.value;
+  if(keyword.length > 0){
+    fetch(`https://dapi.kakao.com/v2/local/search/keyword.json?size=5&query=${keyword}`, {
+      headers: {
+        Authorization: 'KakaoAK 0164bda1178748f8b8e6ff5f441710a0'
+      }
+    }).then(res => res.json()).then(data => {
+        for (let i = 0; i < data.documents.length; i++) {
+          place_name_list.push(data.documents[i].place_name);
+          road_address_name_list.push(data.documents[i].road_address_name);
+          phone_list.push(data.documents[i].phone);
+          x_list.push(data.documents[i].x);
+          y_list.push(data.documents[i].y);
+        }
+        console.log(place_name_list, road_address_name_list, phone_list, x_list, y_list);
+        // 아래 코드가 무엇을 하는지는 잘 모르겠지만 일단 console.log는 잘 찍힙니다
+        // for (let i = 0; i < data.documents.length; i++) {
+        //   if (road_address_name_list[i].length >= 4) {
+        //     $('option')
+        //       .eq(i)
+        //       .val(place_name_list[i] + ', ' + road_address_name_list[i]);
+        //   } else if (road_address_name_list[i].length < 4) {
+        //     $('option').eq(i).val(place_name_list[i]);
+        //   }
+        // }
+    }).catch(err => console.log(err));
+  }
+};
+
+// 아래 다섯개 배열들을 form submit 할 때 같이 보내기
+const fin_place_name_list = [];
+const fin_road_address_name_list = [];
+const fin_phone_list = [];
+const fin_x_list = [];
+const fin_y_list = [];
+
+const doAdd = function () {
+  searchBar.readOnly = true;
+  const word = searchBar.value.split(', ');
+  // for (let i = 0; i < place_name_list.length; i++) {
+  //   if (place_name_list[i] == word[0]) {
+  //     fin_place_name_list.push(place_name_list[i]);
+  //     fin_road_address_name_list.push(road_address_name_list[i]);
+  //     fin_phone_list.push(phone_list[i]);
+  //     fin_x_list.push(x_list[i]);
+  //     fin_y_list.push(y_list[i]);
+  //     break;
+  //   }
+  // }
+};
+
+addButton.addEventListener('click', doAdd);
+searchBar.addEventListener('keyup', doSearch);
+  </script>
+</body>
+</html>
