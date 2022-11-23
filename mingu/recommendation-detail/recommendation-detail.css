@@ -1,0 +1,128 @@
+* {
+  border: none;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul, ol {
+  list-style-type: none;
+}
+
+/* header footer 제외 콘텐츠 */
+.ga-content-detail {
+  padding-top: 13vh;
+  padding-left: 18vw;
+  padding-right: 18vw;
+  position: relative;
+}
+
+/* 목록, 수정, 삭제 */
+.ga-selectbtn {
+  text-align: right;
+}
+
+.ga-selectbtn > button {
+  background-color: inherit;
+  margin-left: 1%;
+}
+
+.ga-selectbtn > button > a {
+  color: gray;
+  text-decoration: none;
+}
+
+/* 추가정보1: 제목, 작성자, 작성일 */
+.ga-reco-info1 {
+  text-align: right;
+}
+
+/* 제목 */
+.ga-reco-info1 > h2 {
+  font-weight: 720;
+}
+
+/* 작성자 */
+.ga-reco-info1 > h3 {
+  font-weight: 500;
+  font-size: 20px;
+}
+
+/* 작성일 */
+.ga-reco-info1 > h4 {
+  font-weight: 500;
+  font-size: 14px;
+  color: gray;
+}
+
+/* 추가정보 hover */
+.ga-reco-plusdata {
+  float: left;
+  display: inline-block;
+  cursor: zoom-in;
+  color: rgb(109, 109, 255);
+}
+
+/* 추가정보2: 전체 */
+.ga-reco-info2 {
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+/* 추가정보2: 조회수 */
+.ga-reco-info2 > span {
+  font-size: 14px;
+}
+
+/* hover 이벤트 */
+.ga-reco-plusdata:hover ~ .ga-reco-info3 {
+  display: block;
+}
+
+/* 추가정보3: 교통수단, 동물, 동행 */
+.ga-reco-info3 {
+  display: none;
+  position: absolute;
+  left: 19vw;
+  z-index: 1;
+
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 3px 3px 2px 3px gray;
+  padding: 10px;
+}
+
+.ga-reco-info3 > h5 {
+  font-size: 15px;
+}
+
+/* 장소리뷰 한조각 */
+.ga-review {
+  background-color: antiquewhite;
+  box-shadow: 0px 3px 8px 5px rgb(190, 190, 190);
+  border-radius: 7px;
+}
+
+
+
+
+
+
+
+
+
+
+/* 폐기처분 쓰레기 css */
+.ga-jang-comment-write {
+  border: 1px solid palevioletred;
+}
+
+.ga-jang-comment {
+  border: 1px solid palevioletred;
+}
+/* 여기까지 폐기예정 */
